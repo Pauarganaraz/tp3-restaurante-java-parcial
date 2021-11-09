@@ -1,0 +1,234 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package tp.pkg3.restaurante.pauarg;
+
+/**
+ *
+ * @author graciela
+ */
+class Asador extends cocinero {
+    
+}
+
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package tp.pkg3.restaurante.pauarg;
+import java.util.scanner;
+
+/**
+ *
+ * @author graciela
+ */
+class cliente {
+    private static final boolean NO_CONFIRMADO = false;
+    
+    private boolean ordenEsConfirmada = NO_CONFIRMADO;
+    
+    /**
+     * consultar si el cliente confirma o no la orden
+     * @return la respuesta del cliente
+     */
+    boolean conrfirmaOrden(){
+        system.out.printIn("confirma el pedido? true o false");
+        scanner opcionEscaner = nextB Scanner(System.In)
+        confirmapedido
+                return ordenEsConfirmada; 
+    }
+}
+
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package tp.pkg3.restaurante.pauarg;
+
+/**
+ *
+ * @author graciela
+ */
+class Cocinero {
+    
+}
+
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package tp.pkg3.restaurante.pauarg;
+
+import static java.time.Clock.system;
+
+/**
+ *
+ * @author graciela
+ */
+class cocinero {
+    private string nombre; //podria ser una imagen del cocinero
+    private string platoPrincipal; //podria ser un catalogo de platos disponibles
+    private string presentacion = "defPresentacion";//podria ser un video de presentacion
+    
+    public void presentarPlatoPrincipal(){
+        system.out.printIn (presentacion + platoPrincipal);
+    }
+   /**
+    * el cocinero se presenta
+    *return presentacion
+    */         
+    
+    string presentate(){
+        return presentacion;   
+    }
+    /** 
+     * devuelve el atributo "plato principal"
+     * @return el valor de "plato principal"
+     */
+     String.getplatoPrincipal(){
+         return platoPrincipal;
+         
+                 
+    }
+     
+     /**
+      * muestra como deberia cocinarse el plato principal del cocinero
+      */
+     
+     void cocinarPlatoPrincipal(){
+         system.out.printIn("cocinando"+ platoPrincipal + "por defecto");
+     }
+}
+
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package tp.pkg3.restaurante.pauarg;
+
+/**
+ *
+ * @author graciela
+ */
+public class Pizzero extends cocinero {
+
+    public Pizzero() {
+    }
+    
+}
+
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package tp.pkg3.restaurante.pauarg;
+
+/**
+ *
+ * @author graciela
+ */
+class Restaurante {
+    private cocinero  CocineroDelDia;
+    
+ /**
+  * define la inicializacion del objeto restaurante con un cocinero
+  * @param cocineroDelDia es el cocinero a asignar en el restaurant
+  */
+    
+    Restaurante (cocinero cocineroDelDia){
+        this.cocineroDelDia = cocineroDelDia; 
+    }
+            
+}
+    /**
+     * El restaurante atiende al cliente recibido
+     * @param cliente a ser atendido/que entro al restaurante
+     */
+    
+    void atenderA(Cliente cliente){
+        mostrarMenu();
+        if (cliente.confirmarOrden()){
+            cocineroDelDia.cocinarPlatoPrincipal();
+        }
+}
+
+    private void mostrarMenu() {
+       system.out.printIn("\t""menu del dia");
+       system.out.printIn(cocineroDelDia.presentate()+ cocineroDelDia.getPlatoPrincipal);
+    }
+
+    private static class cocineroDelDia {
+
+        public cocineroDelDia() {
+        }
+    }
+
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package tp.pkg3.restaurante.pauarg;
+
+/**
+ *
+ * @author graciela
+ */
+class Sushero extends cocinero {
+    
+}
+
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package tp.pkg3.restaurante.pauarg;
+
+/**
+ *
+ * @author graciela
+ */
+public class TP3RestaurantePauARG {
+
+ /* 
+    Restaurante polimorfico
+    Crear un programa que permita: 
+        -Tener varios cocineros para el restaurante
+            - Asador
+            - pizzero
+            -Sushero
+            -Cada cocinero tiene:
+                -nombre
+                -plato principal
+                -presentación
+                Puede:  
+                -Presentarse mencionando su plato principal
+        -Que el restaurante 
+            -SOlo puede tener un cocinero (cocinero del dia)
+            -Atienda a un cliente
+            -puede optar por ORDENAR O NO ORDENAR   
+        -El restaurante pueda cambiar de cocinero (usando polimorfismo)
+    
+
+
+    
+    */
+    
+            
+    public static void main(String[] args) {
+        Asador Roberto = new Asador ();
+        Pizzero Samanta = new Pizzero ();
+        Sushero Jamoto = new sushero () ;
+        
+        Restaurante restaurantePolimorfico;
+        restaurantePolimorfico = new Restaurante (roberto);
+        
+        cliente erick = new cliente (); 
+        
+        restaurantePolimorfico.atenderA(erick);
+                
+        
+        // TODO code application logic here
+    }
+    
+}
